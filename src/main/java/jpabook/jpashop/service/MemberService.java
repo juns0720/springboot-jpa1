@@ -21,6 +21,9 @@ public class MemberService {
         this.memberRepository = memberRepository;
     }
 
+
+
+
     @Transactional
     //회원 가입
     public Long join(Member member){
@@ -46,4 +49,11 @@ public class MemberService {
     public Member findOne(Long memberId){
         return memberRepository.findOne(memberId);
     }
+
+    @Transactional
+    public void update(Long id, String name) {
+        Member member = memberRepository.findOne(id);
+        member.setName(name);
+    }
+
 }
