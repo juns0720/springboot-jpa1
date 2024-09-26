@@ -21,6 +21,7 @@ import static jakarta.persistence.FetchType.LAZY;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Order {
 
+
     @Id @GeneratedValue
     @Column(name = "order_id")
     private Long id;
@@ -55,7 +56,7 @@ public class Order {
         delivery.setOrder(this);
     }
 
-    public static Order createaOrder(Member member, Delivery delivery, OrderItem... orderItems){
+    public static Order createOrder(Member member, Delivery delivery, OrderItem... orderItems){
         Order order = new Order();
         order.setMember(member);
         order.setDelivery(delivery);

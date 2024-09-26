@@ -37,7 +37,7 @@ public class OrderService {
 
         OrderItem orderItem = OrderItem.createOrderItem(item, item.getPrice(), count);
 
-        Order order = Order.createaOrder(member, delivery, orderItem);
+        Order order = Order.createOrder(member, delivery, orderItem);
 
         orderRepository.save(order);
 
